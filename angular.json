@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "FhssStarterApp": {
+    "FhssstarterApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -72,10 +72,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "FhssStarterApp:build:production"
+              "buildTarget": "FhssstarterApp:build:production"
             },
             "development": {
-              "buildTarget": "FhssStarterApp:build:development"
+              "buildTarget": "FhssstarterApp:build:development"
             }
           },
           "defaultConfiguration": "development"
