@@ -9,7 +9,7 @@ export async function createUsers() {
     data: [
       {
         id: 'admin',
-        roles: ['admin'],
+        roles: ['admin', 'user'],
         accountType: 'Student',
         netId: 'admin',
         firstName: 'Admin',

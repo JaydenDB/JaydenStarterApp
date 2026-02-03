@@ -14,6 +14,24 @@ export async function createTasks() {
         title: 'Work',
         description: 'Go to Work',
       },
+      {
+        id: 'school',
+        userId: 'admin',
+        title: 'School',
+        description: 'Go to School',
+      },
+      {
+        id: 'eat',
+        userId: 'admin',
+        title: 'Eat',
+        description: 'Go to Eat',
+      },
+      {
+        id: 'sleep',
+        userId: 'admin',
+        title: 'Sleep',
+        description: 'Go to Sleep',
+      },
     ],
   });
 }

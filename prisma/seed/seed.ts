@@ -18,10 +18,7 @@ export const options = defineOptions({
 export async function seed(args?: SeedArguments) {
   await deleteUsers();
   await createUsers();
-
-  if (args?.tasks) {
-    await createTasks();
-  }
+  await createTasks();
 
   if (args?.count) {
     const count = parseInt(args.count);

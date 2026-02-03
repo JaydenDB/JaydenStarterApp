@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { authorizedProcedure } from '../../trpc';
 import { prisma, TaskStatus } from '../../../../../prisma/server';
+import { sleep } from '@trpc/server/unstable-core-do-not-import';
 
 const getTasksByUserInput = z.object({
   pageSize: z.number(),
@@ -28,6 +29,7 @@ export const getTasksByUser = authorizedProcedure
   .input(getTasksByUserInput)
   .output(getTasksByUserOutput)
   .mutation(async opts => {
+    await sleep(5000);
     const { pageSize, pageOffset } = opts.input;
 
     const totalCount = await prisma.task.count({
@@ -46,9 +48,3 @@ export const getTasksByUser = authorizedProcedure
     });
     return { data, totalCount };
   });
-
-export const createTasksByUser = authorizedProcedure
-  .meta({ requiredPermissions: ['manage-tasks'] })
-  .input(getTasksByUserInput)
-  .output(getTasksByUserOutput)
-  .mutation(async opts => {});
