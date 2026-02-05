@@ -29,7 +29,6 @@ export const getTasksByUser = authorizedProcedure
   .input(getTasksByUserInput)
   .output(getTasksByUserOutput)
   .mutation(async opts => {
-    await sleep(5000);
     const { pageSize, pageOffset } = opts.input;
 
     const totalCount = await prisma.task.count({
